@@ -14,7 +14,7 @@ const config = defineConfig({
           '500': { value: 'tomato' },
         },
         gray: {
-          '150': { value: '#F2F2F2' },
+          '150': { value: '#979797' },
         },
       },
     },
