@@ -6,7 +6,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'react-router';
-
+import { store } from 'app/store/index';
+import { Provider as ProviderRedux } from 'react-redux';
 import type { Route } from './+types/root';
 import { Provider } from './components/ui/provider';
 
@@ -42,7 +43,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Provider>{<Outlet />}</Provider>;
+  return (
+    <ProviderRedux store={store}>
+      <Provider>{<Outlet />}</Provider>
+    </ProviderRedux>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
